@@ -1,0 +1,18 @@
+services:
+  - type: worker
+    name: nidal-gold-ai
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    autoDeploy: false
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: TWELVE_DATA_API_KEY
+        sync: false
+      - key: GOLD_SYMBOL
+        value: XAU/USD
+      - key: GOLD_INTERVAL
+        value: 1h
+      - key: ALERT_INTERVAL_MINUTES
+        value: 15
